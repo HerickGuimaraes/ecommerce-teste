@@ -18,8 +18,7 @@ jobs:
   deploy-dev:
     runs-on: ubuntu-latest
     environment:
-    name: dev
-    url: 'dvops-pipeline.herokuapp.com'
+     name: dev
     needs: build
     steps:
     - name: Run a one-line script
@@ -28,8 +27,7 @@ jobs:
   deploy-front:
     runs-on: ubuntu-latest
     environment:
-    name: front
-    url: 'dvops-pipeline.herokuapp.com'
+      name: front
     needs: deploy-dev
     steps:
     - name: Run a one-line script
@@ -38,8 +36,7 @@ jobs:
   deploy-prd:
     runs-on: ubuntu-latest
     environment:
-    name: prd
-    url: 'dvops-pipeline.herokuapp.com'
+      name: prd
     needs: deploy-front
     steps:
     - name: Run a one-line script
